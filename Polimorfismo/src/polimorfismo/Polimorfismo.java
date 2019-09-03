@@ -30,13 +30,6 @@ public class Polimorfismo {
             System.out.println(selec.entrenamiento());
             System.out.println("");
         }
-        
-        
-        
-        
-        
-        
-        
     }
     
 }
