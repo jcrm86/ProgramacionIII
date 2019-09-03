@@ -16,6 +16,9 @@ public class Herencia {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Cuadrado figuraCuadrado=new Cuadrado();
+        figuraCuadrado.nombreFigura="Cuadrado";
+        System.out.println("El area total del cuadrado es: "+figuraCuadrado.area(10, 20));
     }
     
 }
