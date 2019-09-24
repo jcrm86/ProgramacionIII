@@ -6,7 +6,10 @@
  */
 package estructurasdedatos;
 
+import java.util.ArrayList;
 import java.util.Random;
+import java.util.Map;
+import java.util.HashMap;
 
 
 /**
@@ -22,13 +25,14 @@ public class EstructurasDeDatos {
         // TODO code application logic here
         
         //captura de nombre
-        String nombreCompleto="Juan Camilo Rivera Medina";
+       /* String nombreCompleto="Juan Camilo Rivera Medina";
         Arreglos objetoArreglos=new Arreglos();
         char letra='a';
         System.out.println("Número de "+ letra+" es: "+objetoArreglos.numeroLetrasRepetidas(nombreCompleto, letra));
         
         //Uso de arreglos
         Random numeroAleatorio= new Random();
+        */
         /*int[] arregloDeNumeros= new int[10];
         for(int i=0; i < arregloDeNumeros.length;i++){
             arregloDeNumeros[i]=numeroAleatorio.nextInt(100);
@@ -36,7 +40,7 @@ public class EstructurasDeDatos {
         }
         */
         //Arreglos con objetos
-        Salones[] arregloSalones=new Salones[3];
+        /*Salones[] arregloSalones=new Salones[3];
         for(int i=0; i < arregloSalones.length;i++){
             //se construye el objeto en la posicion del arreglo
             arregloSalones[i]=new Salones();
@@ -45,7 +49,7 @@ public class EstructurasDeDatos {
             arregloSalones[i].cuentaConComputador="Si";
             System.out.println("Nombre del salon "+arregloSalones[i].nombreSalon+" Capacidad de estudiantes "+arregloSalones[i].capacidadEstudiantes+" Cuenta con computador "+arregloSalones[i].cuentaConComputador);
         }
-        
+        */
         
         /*Arbol arbol= new Arbol();
         int valor;
@@ -69,6 +73,24 @@ public class EstructurasDeDatos {
         arbol.recorridoPostorden();
         System.out.println();
         */
+        
+        Map<String,ArrayList> hashMapEjemplo=new HashMap<>();
+        for(int semestre=1; semestre <11;semestre++){
+            ArrayList estudiantes= new ArrayList();
+            for(int estudiante=1;estudiante< 10;estudiante++){
+                estudiantes.add("Estudiante "+estudiante);
+            }
+            hashMapEjemplo.put("Semestre "+semestre, estudiantes);
+        }
+        
+        for(String key:hashMapEjemplo.keySet()){
+            for(int i=0; i< hashMapEjemplo.get(key).size();i++){
+                System.out.println("Llave "+key+" Valor "+hashMapEjemplo.get(key).get(i));
+            }
+        }
+        
+        
+        
         
     }
     
