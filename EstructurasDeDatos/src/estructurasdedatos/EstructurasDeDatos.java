@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,6 +7,7 @@
 package estructurasdedatos;
 
 import java.util.Random;
+
 
 /**
  *
@@ -18,46 +20,34 @@ public class EstructurasDeDatos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //Pila modeloPila= new Pila();
-        /*modeloPila.push(1);
-        modeloPila.imprimir();
-        modeloPila.push(0);
-        modeloPila.imprimir();
-        modeloPila.push(1);
-        modeloPila.imprimir();
-        modeloPila.push(2);
-        modeloPila.imprimir();
         
+        //captura de nombre
+        String nombreCompleto="Juan Camilo Rivera Medina";
+        Arreglos objetoArreglos=new Arreglos();
+        char letra='a';
+        System.out.println("Número de "+ letra+" es: "+objetoArreglos.numeroLetrasRepetidas(nombreCompleto, letra));
+        
+        //Uso de arreglos
+        Random numeroAleatorio= new Random();
+        /*int[] arregloDeNumeros= new int[10];
+        for(int i=0; i < arregloDeNumeros.length;i++){
+            arregloDeNumeros[i]=numeroAleatorio.nextInt(100);
+            System.out.println("EL arreglo en la posicion "+i+" es "+arregloDeNumeros[i]);
+        }
         */
-        
-        /*Cola modeloCola=new Cola();
-        //-1,0,1,2
-        modeloCola.enqueue(1);
-        modeloCola.imprimir();
-        modeloCola.enqueue(0);
-        modeloCola.imprimir();
-        modeloCola.enqueue(1);
-        modeloCola.imprimir();
-        modeloCola.enqueue(2);
-        modeloCola.imprimir();
-        
-        try{
-            
-            Object objetoEliminado=null;
-            
-            while(true){
-                objetoEliminado=modeloCola.dequeue();
-                System.out.printf("Se eliminó %s ", objetoEliminado);
-                modeloCola.imprimir();
-            }
-            
-        
-        }catch(ExcepcionListaVacia e){
-            e.printStackTrace();
-        }*/
+        //Arreglos con objetos
+        Salones[] arregloSalones=new Salones[3];
+        for(int i=0; i < arregloSalones.length;i++){
+            //se construye el objeto en la posicion del arreglo
+            arregloSalones[i]=new Salones();
+            arregloSalones[i].nombreSalon="Salon "+i;
+            arregloSalones[i].capacidadEstudiantes=numeroAleatorio.nextInt(100);
+            arregloSalones[i].cuentaConComputador="Si";
+            System.out.println("Nombre del salon "+arregloSalones[i].nombreSalon+" Capacidad de estudiantes "+arregloSalones[i].capacidadEstudiantes+" Cuenta con computador "+arregloSalones[i].cuentaConComputador);
+        }
         
         
-        Arbol arbol= new Arbol();
+        /*Arbol arbol= new Arbol();
         int valor;
         //se debe agregar libreria java.util.random
         Random numeroAleatorio= new Random();
@@ -78,7 +68,7 @@ public class EstructurasDeDatos {
         System.out.println("Recorrido postorden");
         arbol.recorridoPostorden();
         System.out.println();
-        
+        */
         
     }
     
