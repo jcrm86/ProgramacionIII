@@ -9,6 +9,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -152,7 +154,6 @@ public class ProcesarPensiones extends javax.swing.JFrame {
             try {
                 List<AnalisisDatosPensiones> listadoFinal=cantidadSalarioMinimo.graficoCantidadSalarioMinimo(f);
                 String itemText = (String)combo.getSelectedItem( );
-                
                 switch(itemText){
                     case "Barras":
                         DefaultCategoryDataset dataset= new DefaultCategoryDataset();
@@ -167,6 +168,7 @@ public class ProcesarPensiones extends javax.swing.JFrame {
                         panel.removeAll();
                         panel.add(chartPanel, BorderLayout.CENTER);
                         panel.validate();
+                        cantidadSalarioMinimo.imprimirResultadosEnArchivo(file,listadoFinal);
                         break;
                         
                     case "Pie":
@@ -182,6 +184,7 @@ public class ProcesarPensiones extends javax.swing.JFrame {
                         panel.removeAll();
                         panel.add(chartPanelPie, BorderLayout.CENTER);
                         panel.validate();
+                        cantidadSalarioMinimo.imprimirResultadosEnArchivo(file,listadoFinal);
                         
                         break;
             
@@ -190,6 +193,8 @@ public class ProcesarPensiones extends javax.swing.JFrame {
                 
                 
             } catch (FileNotFoundException ex) {
+                Logger.getLogger(ProcesarPensiones.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
                 Logger.getLogger(ProcesarPensiones.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

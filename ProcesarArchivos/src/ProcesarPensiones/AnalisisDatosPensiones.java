@@ -14,6 +14,8 @@ import java.io.FileNotFoundException;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Panel;
+import java.io.FileWriter;
+import java.io.IOException;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -120,5 +122,17 @@ public class AnalisisDatosPensiones {
             
         }
         return listadoFinal;
+    }
+    
+    public void imprimirResultadosEnArchivo (String f, List<AnalisisDatosPensiones> listaSalida) throws IOException{
+               FileWriter writer = new FileWriter(f + "output.txt");
+                for(int i=0; i < listaSalida.size();i++){
+                       String str =listaSalida.get(i).value+" "+listaSalida.get(i).key;
+                       writer.write(str);
+                  }
+                writer.close();
+    
+    
+    
     }
 }
