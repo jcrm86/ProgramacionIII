@@ -18,6 +18,9 @@ public class JFreeChartApplication {
         // TODO code application logic here
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                //cambio ejecutado hace 5 minutos
+                
+                
                 new FirstExercise().setVisible(true);
             }
         });
