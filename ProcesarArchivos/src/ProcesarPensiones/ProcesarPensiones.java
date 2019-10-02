@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -162,6 +162,7 @@ public class ProcesarPensiones extends javax.swing.JFrame {
                         }
                         JFreeChart chart= ChartFactory.createBarChart("Pensiones ", "Tipo salario", "Cantidad", dataset, PlotOrientation.HORIZONTAL, false, false, false);
                         CategoryPlot catPlot=chart.getCategoryPlot();
+                        
                         catPlot.setRangeGridlinePaint(Color.BLACK);
 
                         ChartPanel chartPanel=new ChartPanel(chart);
