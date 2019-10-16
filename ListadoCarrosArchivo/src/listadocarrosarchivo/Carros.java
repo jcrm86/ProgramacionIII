@@ -33,7 +33,9 @@ public class Carros {
         try (Scanner scanner = new Scanner(f);) {
             while (scanner.hasNextLine()) {
                 String[] carro=getRecordFromLine(scanner.nextLine());
-                listadoCarros.add(new Carros(carro[0],carro[1],carro[2]));
+                if(carro.length >=3){
+                     listadoCarros.add(new Carros(carro[0],carro[1],carro[2]));
+                }
             }
         }
         return listadoCarros;
