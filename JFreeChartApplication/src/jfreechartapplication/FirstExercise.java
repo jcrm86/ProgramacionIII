@@ -169,9 +169,9 @@ public class FirstExercise extends javax.swing.JFrame {
         int valor4= Integer.parseInt(texto_4.getText());
         
         DefaultCategoryDataset dataset= new DefaultCategoryDataset();
-        dataset.setValue(valor1,"","Barra 1");
+        dataset.setValue(valor1,"","Llave 1");
         dataset.setValue(valor2,"","Barra 2");
-        dataset.setValue(valor3,"","Barra 3");
+        dataset.setValue(valor3,"","Llave 3");
         dataset.setValue(valor4,"","Barra 4");
         
         JFreeChart chart= ChartFactory.createBarChart("Diagrama de barras ejemplo", "X", "Y", dataset, PlotOrientation.HORIZONTAL, false, false, false);

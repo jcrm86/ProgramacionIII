@@ -125,15 +125,16 @@ public class AnalisisDatosPensiones {
         return listadoFinal;
     }
     
-    public void imprimirResultadosEnArchivo (String f, List<AnalisisDatosPensiones> listaSalida) throws IOException{
-               FileWriter writer = new FileWriter(f + "output.txt");
+    public void imprimirResultadosEnArchivo (String pathArchivo, List<AnalisisDatosPensiones> listaSalida) throws IOException{
+                //se crea el archvo en donde se va a escribir la información de la lista
+               FileWriter writer = new FileWriter(pathArchivo + "output.csv");
+               //recorrer la lista que se va a transformar en csv
                 for(int i=0; i < listaSalida.size();i++){
-                       String str =listaSalida.get(i).value+","+listaSalida.get(i).key+"\n";
+                        //se crea la fila que se va a incluir en el archivo
+                       String str =listaSalida.get(i).value+";"+listaSalida.get(i).key+"\n";
+                       //se escribe la linea que se va registrar en el archivo
                        writer.write(str);
                   }
                 writer.close();
-    
-    
-    
     }
 }

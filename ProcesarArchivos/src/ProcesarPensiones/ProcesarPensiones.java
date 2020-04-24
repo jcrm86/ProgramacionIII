@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -149,60 +150,70 @@ public class ProcesarPensiones extends javax.swing.JFrame {
         // TODO add your handling code here:
         AnalisisDatosPensiones cantidadSalarioMinimo= new AnalisisDatosPensiones();
         String file= filePath.getText().toString();
+        //String file="C:\\Users\\Juan Rivera\\Documents\\Juan\\UMNG\\ProgramacionIII\\ProcesarArchivos\\test";
         File f= new File(file);
          if(f != null && f.exists()){
+             ArrayList<Persona> listaPersonas= new ArrayList<Persona>();
+             for(int indicePersona=0; indicePersona< 80;indicePersona++){
+                 Persona nuevaPersona=new Persona("Juan "+indicePersona,"Camilo "+indicePersona, "Rivera "+indicePersona,"Medellin "+indicePersona,indicePersona);
+                 listaPersonas.add(nuevaPersona);
+             }
+             Persona guardarArchivo=new Persona();
             try {
-                List<AnalisisDatosPensiones> listadoFinal=cantidadSalarioMinimo.graficoCantidadSalarioMinimo(f);
-                String itemText = (String)combo.getSelectedItem( );
-                switch(itemText){
-                    case "Barras":
-                        DefaultCategoryDataset dataset= new DefaultCategoryDataset();
-                        for(int i=0; i < listadoFinal.size();i++){
-                            dataset.setValue(listadoFinal.get(i).value,"",listadoFinal.get(i).key);
-                        }
-                        JFreeChart chart= ChartFactory.createBarChart("Pensiones ", "Tipo salario", "Cantidad", dataset, PlotOrientation.HORIZONTAL, false, false, false);
-                        CategoryPlot catPlot=chart.getCategoryPlot();
-                        
-                        catPlot.setRangeGridlinePaint(Color.BLACK);
-
-                        ChartPanel chartPanel=new ChartPanel(chart);
-                        panel.removeAll();
-                        panel.add(chartPanel, BorderLayout.CENTER);
-                        panel.validate();
-                        cantidadSalarioMinimo.imprimirResultadosEnArchivo(file,listadoFinal);
-                        break;
-                        
-                    case "Pie":
-                         DefaultPieDataset datasetPie=new DefaultPieDataset(); 
-                         for(int i=0; i < listadoFinal.size();i++){
-                            datasetPie.setValue(listadoFinal.get(i).key,listadoFinal.get(i).value);
-                        }
-                        JFreeChart chartPie= ChartFactory.createPieChart("Pensiones",datasetPie );
-                        //CategoryPlot catPlotPie=chartPie.getCategoryPlot();
-                        //catPlotPie.setRangeGridlinePaint(Color.BLACK);
-
-                        ChartPanel chartPanelPie=new ChartPanel(chartPie);
-                        panel.removeAll();
-                        panel.add(chartPanelPie, BorderLayout.CENTER);
-                        panel.validate();
-                        cantidadSalarioMinimo.imprimirResultadosEnArchivo(file,listadoFinal);
-                        
-                        break;
-            
-                }
-                
-                
-                
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(ProcesarPensiones.class.getName()).log(Level.SEVERE, null, ex);
+                guardarArchivo.imprimirResultadosEnArchivo(file, listaPersonas);
             } catch (IOException ex) {
                 Logger.getLogger(ProcesarPensiones.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
-        
-        
-        
-        
+             
+         }
+                
+                
+                
+                
+                
+                
+                
+                
+                List<AnalisisDatosPensiones> listadoFinal=cantidadSalarioMinimo.graficoCantidadSalarioMinimo(f);
+//                String itemText = (String)combo.getSelectedItem( );
+//                switch(itemText){
+//                    case "Barras":
+//                        DefaultCategoryDataset dataset= new DefaultCategoryDataset();
+//                        for(int i=0; i < listadoFinal.size();i++){
+//                            dataset.setValue(listadoFinal.get(i).value,"",listadoFinal.get(i).key);
+//                        }
+//                        JFreeChart chart= ChartFactory.createBarChart("Pensiones ", "Tipo salario", "Cantidad", dataset, PlotOrientation.HORIZONTAL, false, false, false);
+//                        CategoryPlot catPlot=chart.getCategoryPlot();
+//                        
+//                        catPlot.setRangeGridlinePaint(Color.BLACK);
+//
+//                        ChartPanel chartPanel=new ChartPanel(chart);
+//                        panel.removeAll();
+//                        panel.add(chartPanel, BorderLayout.CENTER);
+//                        panel.validate();
+//                        cantidadSalarioMinimo.imprimirResultadosEnArchivo(file,listadoFinal);
+//                        break;
+//                        
+//                    case "Pie":
+//                         DefaultPieDataset datasetPie=new DefaultPieDataset(); 
+//                         for(int i=0; i < listadoFinal.size();i++){
+//                            datasetPie.setValue(listadoFinal.get(i).key,listadoFinal.get(i).value);
+//                        }
+//                        JFreeChart chartPie= ChartFactory.createPieChart("Pensiones",datasetPie );
+//                        //CategoryPlot catPlotPie=chartPie.getCategoryPlot();
+//                        //catPlotPie.setRangeGridlinePaint(Color.BLACK);
+//
+//                        ChartPanel chartPanelPie=new ChartPanel(chartPie);
+//                        panel.removeAll();
+//                        panel.add(chartPanelPie, BorderLayout.CENTER);
+//                        panel.validate();
+//                        cantidadSalarioMinimo.imprimirResultadosEnArchivo(file,listadoFinal);
+//                        
+//                        break;
+            
+                
+                
+         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
