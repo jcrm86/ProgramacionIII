@@ -26,7 +26,7 @@ public class SecuenciaImagenes extends JPanel{
     protected ImageIcon imagenes[];
     private final int TOTAL_IMAGENES=103;
     private int imagenActual=0;
-    private final int RETRASO_ANIMACION=200;//Retraso en milisegundos
+    private final int RETRASO_ANIMACION=300;//Retraso en milisegundos
     private int ancho;
     private int alto;
     
@@ -34,7 +34,7 @@ public class SecuenciaImagenes extends JPanel{
     
     public SecuenciaImagenes(){
         //imagenes=new ImageIcon[TOTAL_IMAGENES];
-        File folder =new File("C:\\Users\\Juan Camilo\\Documents\\NetBeansProjects\\ImportarImagenes\\src\\imagenes");
+        File folder =new File("C:\\Users\\juanr\\Documents\\Juan\\ProgramacionIII\\ImportarImagenes\\src\\imagenes");
         File[] fileNames=folder.listFiles();
         int i=0;
         imagenes=new ImageIcon[fileNames.length];

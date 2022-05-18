@@ -10,6 +10,7 @@ import java.lang.Runnable;
  * @author Juan Rivera
  */
 public class RunnableThread implements Runnable {
+    //sobreescribe de la clase Runnable
       public void run() 
     { 
         try

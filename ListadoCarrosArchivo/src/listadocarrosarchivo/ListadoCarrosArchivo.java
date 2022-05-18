@@ -30,10 +30,7 @@ public class ListadoCarrosArchivo {
         try{
             List<Carros> listadoCarros=modeloCarros.leerListadoDeArchivo(f);
             //Desarrolle a partir de este punto los metodos o procedimientos necesarios para completar el problema
-            
-            
-        
-        
+           
         }catch (FileNotFoundException ex) {
             Logger.getLogger("El archivo no fue procesado").log(Level.SEVERE, null, ex);
         } 

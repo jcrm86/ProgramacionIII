@@ -18,16 +18,17 @@ public class PilasColasListas {
      */
     public static void main(String[] args) {
         // Se crea una pila nueva
-        /*Stack nuevaPila= new Stack();
+    /*    Stack nuevaPila= new Stack();
         nuevaPila.push("Juan Camilo");
         nuevaPila.push(120);
         System.out.println("Lectura método empty: "+nuevaPila.empty());
         System.out.println("Lectura método peek: "+nuevaPila.peek());
+        //retirarun elemento
         nuevaPila.pop();
         System.out.println("Lectura método peek al retirar el termino de la punta: "+nuevaPila.peek());
-        */
+      */  
         //creación de una cola
-        LinkedList nuevaCola= new LinkedList();
+/*        LinkedList nuevaCola= new LinkedList();
        // nuevaCola.offer("Rivera Medina");
         for(int i=0; i < 5;i++){
             nuevaCola.offer(i);
@@ -36,7 +37,10 @@ public class PilasColasListas {
         for(int i=0; i < 5;i++){
             System.out.println("Lectura método poll: "+nuevaCola.poll());
         }
+  */
         
+
+
         
     }
     

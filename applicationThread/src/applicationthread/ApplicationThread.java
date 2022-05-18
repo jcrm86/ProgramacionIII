@@ -12,11 +12,11 @@ package applicationthread;
 public class ApplicationThread {
 
     public static void main(String[] args) {
-         int n = 8; // Numero of threads 
-        for (int i=0; i<8; i++) 
+         int numeroHilos = 8; // Numero of threads 
+        for (int i=0; i<numeroHilos; i++) 
         { 
             //Ejercicio 1
-                //ThreadExample object = new ThreadExample(); 
+           // ThreadExample object = new ThreadExample(); 
             //Ejercicio 2
             Thread object = new Thread(new RunnableThread());
             object.start(); 

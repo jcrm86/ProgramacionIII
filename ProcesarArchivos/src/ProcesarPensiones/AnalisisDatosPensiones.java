@@ -125,8 +125,8 @@ public class AnalisisDatosPensiones {
         return listadoFinal;
     }
     
-    public void imprimirResultadosEnArchivo (String f, List<AnalisisDatosPensiones> listaSalida) throws IOException{
-               FileWriter writer = new FileWriter(f + "output.txt");
+    public void imprimirResultadosEnArchivo (String nombreArchivo, List<AnalisisDatosPensiones> listaSalida) throws IOException{
+               FileWriter writer = new FileWriter(nombreArchivo + "_output.txt");
                 for(int i=0; i < listaSalida.size();i++){
                        String str =listaSalida.get(i).value+","+listaSalida.get(i).key+"\n";
                        writer.write(str);
